@@ -14,7 +14,7 @@ public class Marka {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
 	private int idMarke;
-	@Column (name="naziv_marke")
+	@Column (name="pera")
 	private String nazivMarke;
 	private String zemlja;
 	
