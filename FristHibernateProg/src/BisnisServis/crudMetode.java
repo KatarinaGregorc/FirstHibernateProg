@@ -4,19 +4,24 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import Model.Adresa;
 import Model.Marka;
 
 public class crudMetode {
 
 	private SessionFactory sf=new Configuration().configure().buildSessionFactory();
 	
-	public void ubaciMarku(String nazivMarke,String zemlja) {
+	public void ubaciMarku(String nazivMarke,String zemlja,String grad,String ulica) {
 		
+		Adresa adresa = new Adresa();
+		adresa.setZemlja(zemlja);
+		adresa.setGrad(grad);
+		adresa.setUlica(ulica);
 		
 		Marka marka=new Marka();
 		
 		marka.setNazivMarke(nazivMarke);
-		marka.setZemlja(zemlja);
+		marka.setAdresa(adresa);
 		
 		
 		
@@ -84,7 +89,7 @@ public class crudMetode {
 		try {
 			
 			if(marka !=null) {
-			marka.setZemlja(zemlja);
+			marka.getAdresa().setZemlja(zemlja);
 		    sesija.update(marka);
 		    System.out.println("Uptade uspeo");
 		    sesija.getTransaction().commit();
