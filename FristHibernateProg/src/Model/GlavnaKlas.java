@@ -34,7 +34,7 @@ public class GlavnaKlas {
 	
 		ucitaj.close();*/
 		
-		crudMetode metode=new crudMetode();
+		/*crudMetode metode=new crudMetode();
 		//metode.ubaciMarku(nazivMarke, zemlja, grad, ulica);
 		metode.ubaciMarku("Moskvich", "SSSR","Moskva", "Staljinova");
 		
@@ -59,7 +59,60 @@ public class GlavnaKlas {
 		
 		
 		
-		metode.ubaciUsera("Pera", "Peric",ListaAdresa);
+		metode.ubaciUsera("Pera", "Peric",ListaAdresa);*/
+		
+		 SessionFactory sf=new Configuration().configure().buildSessionFactory();
+		 
+		List<Adresa>ListaAdresa=new ArrayList<Adresa>();
+		List<Marka>marke=new ArrayList<Marka>();
+		
+		
+		User user=new User();
+		Marka marka=new Marka();
+		Marka marka2=new Marka();
+		
+		Adresa adresa=new Adresa();
+		
+		adresa.setZemlja("Srbija");
+		adresa.setGrad("Beograd");
+		adresa.setUlica("Moja ulica");
+		
+		
+		marka.setNazivMarke("Ferari");
+		marka.setAdresa(adresa);
+		marka.setUser(user);
+		marka2.setNazivMarke("lambo");
+		marka2.setAdresa(adresa);
+		marka2.setUser(user);
+		
+		
+		
+		user.setIme("Pera");
+		user.setPrezime("Peric");
+		
+		ListaAdresa.add(adresa);
+		
+		user.setListaAdresa(ListaAdresa);
+		marke.add(marka);
+		marke.add(marka2);
+		user.setMarke(marke);
+		
+				Session sesija=sf.openSession();
+		sesija.beginTransaction();
+		try {
+			sesija.save(user);
+			sesija.save(marka);
+			sesija.save(marka2);
+			sesija.getTransaction().commit();
+			
+		} catch (Exception e) {
+		
+			sesija.getTransaction().rollback();
+		
+		}finally {
+			sesija.close();
+		}
+		 
 		
 		
 	}

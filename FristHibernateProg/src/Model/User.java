@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 @Entity
 public class User {
 @Id
@@ -18,6 +20,13 @@ public class User {
 	@ElementCollection
 	private List<Adresa> ListaAdresa=new ArrayList<Adresa>();
 	
+	@OneToMany
+    private List<Marka>marke=new ArrayList<Marka>();
+    
+    
+	
+
+
 
 	public int getIdUser() {
 		return idUser;
@@ -51,7 +60,13 @@ public class User {
 		ListaAdresa = listaAdresa;
 	}
 	
-	
+	public List<Marka> getMarke() {
+		return marke;
+	}
+
+	public void setMarke(List<Marka> marke) {
+		this.marke = marke;
+	}
 	
 	
 	
