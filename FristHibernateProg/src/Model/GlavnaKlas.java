@@ -63,11 +63,14 @@ public class GlavnaKlas {
 		
 		 SessionFactory sf=new Configuration().configure().buildSessionFactory();
 		 
-		List<Adresa>ListaAdresa=new ArrayList<Adresa>();
+		/*List<Adresa>ListaAdresa=new ArrayList<Adresa>();
 		List<Marka>marke=new ArrayList<Marka>();
-		
+		List<User>listauser=new ArrayList<User>();
 		
 		User user=new User();
+		User user1 =new User();
+		User user2=new User();
+		User user3=new User();
 		Marka marka=new Marka();
 		Marka marka2=new Marka();
 		
@@ -80,11 +83,15 @@ public class GlavnaKlas {
 		
 		marka.setNazivMarke("Ferari");
 		marka.setAdresa(adresa);
-		marka.setUser(user);
+		//marka.setUser(user);
 		marka2.setNazivMarke("lambo");
 		marka2.setAdresa(adresa);
-		marka2.setUser(user);
-		
+		//marka2.setUser(user);
+		listauser.add(user);
+		listauser.add(user2);
+		listauser.add(user3);
+		marka.setListaUsera(listauser);
+		marka2.setListaUsera(listauser);
 		
 		
 		user.setIme("Pera");
@@ -92,17 +99,22 @@ public class GlavnaKlas {
 		
 		ListaAdresa.add(adresa);
 		
-		user.setListaAdresa(ListaAdresa);
-		marke.add(marka);
-		marke.add(marka2);
-		user.setMarke(marke);
+	
+		*/
+		 User user=new User();
+		 Administrator administrator=new Administrator();
+		 Operater operater=new Operater();
 		
 				Session sesija=sf.openSession();
 		sesija.beginTransaction();
 		try {
-			sesija.save(user);
-			sesija.save(marka);
-			sesija.save(marka2);
+			//sesija.save(user);
+			//sesija.save(user1);
+			//sesija.save(user2);
+			//sesija.save(user3);
+			//sesija.save(marka);
+			//sesija.save(marka2);
+			
 			sesija.getTransaction().commit();
 			
 		} catch (Exception e) {

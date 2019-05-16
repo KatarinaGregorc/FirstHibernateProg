@@ -3,11 +3,13 @@ package Model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
@@ -18,10 +20,10 @@ public class User {
 	private String ime;
 	private String prezime;
 	@ElementCollection
-	private List<Adresa> ListaAdresa=new ArrayList<Adresa>();
+	//private List<Adresa> ListaAdresa=new ArrayList<Adresa>();
 	
-	@OneToMany
-    private List<Marka>marke=new ArrayList<Marka>();
+	@ManyToMany
+  //  private List<Marka>marke=new ArrayList<Marka>();
     
     
 	
@@ -52,21 +54,21 @@ public class User {
 		this.prezime = prezime;
 	}
 
-	public List<Adresa> getListaAdresa() {
-		return ListaAdresa;
-	}
+	//public List<Adresa> getListaAdresa() {
+	//	return ListaAdresa;
+//	}
 
-	public void setListaAdresa(List<Adresa> listaAdresa) {
-		ListaAdresa = listaAdresa;
-	}
+	//public void setListaAdresa(List<Adresa> listaAdresa) {
+	//	ListaAdresa = listaAdresa;
+	//}
 	
-	public List<Marka> getMarke() {
-		return marke;
-	}
+	//public List<Marka> getMarke() {
+	//	return marke;
+	//}
 
-	public void setMarke(List<Marka> marke) {
-		this.marke = marke;
-	}
+	//public void setMarke(List<Marka> marke) {
+	//	this.marke = marke;
+	//}
 	
 	
 	

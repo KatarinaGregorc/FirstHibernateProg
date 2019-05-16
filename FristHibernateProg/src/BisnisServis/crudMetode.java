@@ -130,7 +130,7 @@ public class crudMetode {
 		User user=new User();
 		user.setIme(ime);
 		user.setPrezime(prezime);
-		user.setListaAdresa(listaAdresa);
+		//user.setListaAdresa(listaAdresa);
 		
 		
 		Session sesija=sf.openSession();
