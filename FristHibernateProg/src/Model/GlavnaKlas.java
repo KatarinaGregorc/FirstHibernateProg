@@ -102,18 +102,23 @@ public class GlavnaKlas {
 	
 		*/
 		 User user=new User();
+		 user.setIme("User");
+		 user.setPrezime("Prezime");
+		 
 		 Administrator administrator=new Administrator();
+		 administrator.setIme("Admin");
+		 administrator.setBanujOpertera("Necu");
+		 
 		 Operater operater=new Operater();
-		
+		 operater.setIme("Operater");
+		operater.setPozicija("Pozicija");
 				Session sesija=sf.openSession();
 		sesija.beginTransaction();
 		try {
-			//sesija.save(user);
-			//sesija.save(user1);
-			//sesija.save(user2);
-			//sesija.save(user3);
-			//sesija.save(marka);
-			//sesija.save(marka2);
+			sesija.save(user);
+			sesija.save(administrator);
+			sesija.save(operater);
+			
 			
 			sesija.getTransaction().commit();
 			

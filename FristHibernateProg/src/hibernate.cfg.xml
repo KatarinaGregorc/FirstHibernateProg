@@ -28,7 +28,7 @@
 <property name="hbm2ddl.auto">update</property>
 
 <!-- Names the annotated entity class -->
-<mapping class="Model.Marka"/>
+
 <mapping class="Model.User"/>
 <mapping class="Model.Operater"/>
 <mapping class="Model.Administrator"/>

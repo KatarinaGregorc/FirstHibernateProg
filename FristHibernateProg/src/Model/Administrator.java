@@ -3,7 +3,8 @@ package Model;
 import javax.persistence.Entity;
 
 @Entity
-public class Administrator {
+public class Administrator extends User {
+	
 	private String banujOpertera;
 
 	public String getBanujOpertera() {
